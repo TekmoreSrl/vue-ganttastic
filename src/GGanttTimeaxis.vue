@@ -19,10 +19,10 @@
           color: themeColors.text
         }"
 			>
-				<div> {{canShowDay(day) ? timeAxisOptions ? timeAxisOptions.dayFormatter(day) : dayFormatted(day) : ""}} </div>
+				<div> {{canShowDay(day) ? customDayFormatter ? customDayFormatter(day) : dayFormatted(day) : ""}} </div>
 				<div
 					:style="{background: themeColors.ternary, color: themeColors.text}"
-					v-if="timeAxisOptions && timeAxisOptions.hideTimeAxisHour"
+					v-if="showTimeAxisHour"
 				>
 					<div
 						v-for="hour in day.ganttHours"
@@ -58,7 +58,8 @@ export default {
 		timemarkerOffset: { type: Number, default: 0 },
 		locale: String,
 		themeColors: Object,
-		timeAxisOptions: Object,
+		customDayFormatter: Function,
+		showTimeAxisHour: Boolean,
 	},
 
 	data() {

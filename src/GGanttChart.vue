@@ -11,7 +11,9 @@
 			:timemarker-offset="timemarkerOffset"
 			:theme-colors="themeColors"
 			:locale="locale"
-			:time-axis-options="timeAxisOptions"
+			:custom-day-formatter="customDayFormatter"
+			:can-show-tooltip="canShowTooltip"
+			:show-time-axis-hour="showTimeAxisHour"
 		/>
 
 		<g-gantt-grid
@@ -50,7 +52,12 @@ export default {
 		chartStart: { type: String, default: moment().startOf("day").format("YYYY-MM-DD HH:mm:ss") },
 		chartEnd: { type: String, default: moment().startOf("day").add(12, "hours").format("YYYY-MM-DD HH:mm:ss") },
 		hideTimeaxis: Boolean,
-		timeAxisOptions: { type: String },
+		customDayFormatter: {
+			type: Function,
+			default: null
+		},
+		canShowTooltip: { type: Boolean, default: true },
+		showTimeAxisHour: { type: Boolean, default: true },
 		rowLabelWidth: { type: String, default: "10%" },
 		rowHeight: { type: Number, default: 40 },
 		locale: { type: String, default: "en" },

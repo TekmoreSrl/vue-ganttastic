@@ -51,10 +51,8 @@ export default {
 			rowHeight: 40,
 			rowLabelWidth: 15,
 			hideTimeaxis: false,
-			timeAxisOptions: {
-				dayFormatter: (day) => moment(day.value).format("dddd DD"),
-				hideTimeAxisHour: true
-			},
+			customDayFormatter: (day) => moment(day.value).format("dddd DD"),
+      showTimeAxisHour: true,
 			canShowTooltip: false,
 			highlightOnHover: false,
 			hours: [...Array(24).keys()],

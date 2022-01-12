@@ -63,7 +63,7 @@ export default {
 		barStart: { type: String, required: true }, // property name of the bar objects that represents the start datetime
 		barEnd: { type: String, required: true },  // property name of the bar objects that represents the end datetime,
 		highlightOnHover: Boolean,
-		canShowTooltip: { type: Boolean, default: true },
+		canShowTooltip: { type: Boolean },
 	},
 
 	inject: [
