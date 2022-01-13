@@ -13,7 +13,7 @@
 			:locale="locale"
 			:custom-day-formatter="customDayFormatter"
 			:can-show-tooltip="canShowTooltip"
-			:show-time-axis-hour="showTimeAxisHour"
+			:has-timeaxis-hour="hasTimeaxisHour"
 		/>
 
 		<g-gantt-grid
@@ -52,12 +52,12 @@ export default {
 		chartStart: { type: String, default: moment().startOf("day").format("YYYY-MM-DD HH:mm:ss") },
 		chartEnd: { type: String, default: moment().startOf("day").add(12, "hours").format("YYYY-MM-DD HH:mm:ss") },
 		hideTimeaxis: Boolean,
+		hasTimeaxisHour: Boolean,
 		customDayFormatter: {
 			type: Function,
 			default: null
 		},
 		canShowTooltip: { type: Boolean, default: true },
-		showTimeAxisHour: { type: Boolean, default: true },
 		rowLabelWidth: { type: String, default: "10%" },
 		rowHeight: { type: Number, default: 40 },
 		locale: { type: String, default: "en" },

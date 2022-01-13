@@ -52,7 +52,7 @@ export default {
 			rowLabelWidth: 15,
 			hideTimeaxis: false,
 			customDayFormatter: (day) => moment(day.value).format("dddd DD"),
-      showTimeAxisHour: true,
+      hasTimeaxisHour: true,
 			canShowTooltip: false,
 			highlightOnHover: false,
 			hours: [...Array(24).keys()],

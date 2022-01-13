@@ -22,7 +22,7 @@
 				<div> {{canShowDay(day) ? customDayFormatter ? customDayFormatter(day) : dayFormatted(day) : ""}} </div>
 				<div
 					:style="{background: themeColors.ternary, color: themeColors.text}"
-					v-if="showTimeAxisHour"
+					v-if="hasTimeaxisHour"
 				>
 					<div
 						v-for="hour in day.ganttHours"
@@ -59,7 +59,7 @@ export default {
 		locale: String,
 		themeColors: Object,
 		customDayFormatter: Function,
-		showTimeAxisHour: Boolean,
+		hasTimeaxisHour: Boolean,
 	},
 
 	data() {
