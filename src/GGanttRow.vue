@@ -9,9 +9,14 @@
 			class="g-gantt-row-label"
 			:style="rowLabelStyle"
 		>
-			<slot name="label">
-				{{label}}
-			</slot>
+			<g-gantt-label :label="label">
+				<template #label="{label}">
+					<slot
+						name="label"
+						:label="label"
+					/>
+				</template>
+			</g-gantt-label>
 		</div>
 		<div
 			class="g-gantt-row-bars-container"
@@ -47,6 +52,7 @@
 
 <script>
 import GGanttBar from './GGanttBar.vue'
+import GGanttLabel from './GGanttLabel.vue'
 import moment from 'moment'
 
 export default {
@@ -54,7 +60,8 @@ export default {
 	name: "GGanttRow",
 
 	components: {
-		GGanttBar
+		GGanttBar,
+		GGanttLabel
 	},
 
 	props: {

@@ -24,6 +24,9 @@
 					bar-start="myStart"
 					bar-end="myEnd"
 				>
+					<template #label="{label}">
+						<span>{{label}}</span>
+					</template>
 					<template #bar-label="{bar}">
 						<span>{{bar.label}}</span>
 					</template>
@@ -36,6 +39,7 @@
 <script>
 import GGanttChart from './GGanttChart.vue'
 import GGanttRow from './GGanttRow.vue'
+import moment from 'moment';
 
 export default {
 	components: {
@@ -52,7 +56,7 @@ export default {
 			rowLabelWidth: 15,
 			hideTimeaxis: false,
 			customDayFormatter: (day) => moment(day.value).format("dddd DD"),
-      hasTimeaxisHour: true,
+			hasTimeaxisHour: true,
 			canShowTooltip: false,
 			highlightOnHover: false,
 			hours: [...Array(24).keys()],
